@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<link rel="stylesheet" href="style.css">
+<title>Komi Keto</title>
+
+</head>
+<body>
+<header>Komi Keto</header>
+<main>
+  <section class="food-list-section">
+    <h2>Cardápio</h2>
+    <div class="food-list" id="food-list">
+      <!-- Pratos renderizados aqui -->
+    </div>
+  </section>
+
+  <section class="cart">
+    <h2>Carrinho</h2>
+    <div class="cart-items" id="cart-items">
+      <!-- Itens do carrinho -->
+    </div>
+    <div class="cart-total" id="cart-total">Total: R$ 0,00</div>
+    <button class="order-btn" id="order-btn" disabled>Finalizar Pedido</button>
+    <div id="success-message" class="success-message" style="display:none;">
+      Pedido realizado com sucesso! Obrigado.
+    </div>
+  </section>
+</main>
+</body>
+<script src="script.js"></script>
+</html>

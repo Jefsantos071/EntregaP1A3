@@ -1,0 +1,230 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #f6f8fa, #e8ebf0);
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  background: linear-gradient(90deg, #ff5722, #ff784e);
+  color: white;
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  color: #ff5722;
+  text-align: center;
+}
+
+/* Lista de pratos */
+.food-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.food-item {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.food-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.food-item .title {
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #ff5722;
+}
+
+.food-item .description {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: #666;
+}
+
+.food-item .price {
+  font-weight: 700;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  color: #222;
+}
+
+.food-item button {
+  align-self: flex-start;
+  background: linear-gradient(90deg, #ff5722, #ff784e);
+  border: none;
+  border-radius: 6px;
+  color: white;
+  padding: 0.7rem 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.food-item button:hover {
+  background: linear-gradient(90deg, #e64a19, #ff5722);
+  transform: scale(1.05);
+}
+
+.food-image {
+  max-width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  align-self: center;
+}
+
+.cart {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.cart h2 {
+  margin-bottom: 1rem;
+  color: #ff5722;
+  font-size: 1.6rem;
+  text-align: center;
+}
+
+.cart-items {
+  flex-grow: 1;
+  overflow-y: auto;
+  max-height: 240px;
+  margin-bottom: 1rem;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #ddd;
+  font-size: 1rem;
+}
+
+.cart-item:last-child {
+  border-bottom: none;
+}
+
+.cart-item-name {
+  flex: 1;
+  margin-right: 0.5rem;
+}
+
+.cart-item-qty {
+  width: 80px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.cart-item-qty button {
+  background: #ff5722;
+  border: none;
+  color: white;
+  width: 28px;
+  height: 28px;
+  font-weight: 900;
+  line-height: 1;
+  border-radius: 4px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.cart-total {
+  font-weight: 700;
+  font-size: 1.3rem;
+  text-align: right;
+  margin-bottom: 1rem;
+}
+
+.order-btn {
+  background: linear-gradient(90deg, #ff5722, #ff784e);
+  border: none;
+  padding: 0.8rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.order-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.order-btn:hover:not(:disabled) {
+  background: linear-gradient(90deg, #e64a19, #ff5722);
+  transform: scale(1.05);
+}
+
+.success-message {
+  background: #c8e6c9;
+  color: #256029;
+  border-radius: 8px;
+  padding: 1.2rem;
+  text-align: center;
+  margin-top: 1.5rem;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.cart-items::-webkit-scrollbar {
+  width: 8px;
+}
+
+.cart-items::-webkit-scrollbar-thumb {
+  background: #ff5722;
+  border-radius: 4px;
+}
+
+@media (max-width: 400px) {
+  main {
+    padding: 1rem;
+  }
+
+  .cart-items {
+    max-height: 180px;
+  }
+}
